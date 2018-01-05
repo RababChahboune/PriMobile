@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header  style="background: #424242 !important">
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -6,32 +6,31 @@
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
+<ion-content padding style="background-color: #424242">
   <ion-searchbar></ion-searchbar>
   <ion-grid>
     <ion-row no-padding>
       <ion-col no-padding no-margin>
-        <ion-card no-padding (tap)="tapEvent($event)">
+        <ion-card no-padding (tap)="tapEvent($event)" style="background-color: #c62828">
           <ion-card-content>
-            Course 1 course 1
+            <p style="color: white">Course 1</p>
           </ion-card-content>
         </ion-card>
-        <ion-card no-padding>
+        <ion-card no-padding style="background-color: #4cb2d4">
           <ion-card-content>
-            Course 1
+            <p style="color: white">Course 1 course 1</p>
           </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col no-padding no-margin>
-        <ion-card no-padding>
+        <ion-card no-padding style="background-color: #844d9e">
           <ion-card-content>
-            Course 1
+            <p style="color: white">Course 1 course 1</p>
           </ion-card-content>
         </ion-card>
-        <ion-card no-padding>
+        <ion-card no-padding style="background-color: #eb7b2d">
           <ion-card-content>
-            Course 1 course 1
+            <p style="color: white">Course 1</p>
           </ion-card-content>
         </ion-card>
       </ion-col>

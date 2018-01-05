@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {ListPage} from "../list/list";
+import {CoursPage} from "../cours/cours";
 
 @Component({
   selector: 'page-home',
@@ -16,6 +16,8 @@ export class HomePage {
 
   tapEvent(e) {
     console.log(this.title);
-    this.navCtrl.setRoot(ListPage);
+    this.navCtrl.setRoot(CoursPage,{
+      "id" : 15
+    });
   }
 }
