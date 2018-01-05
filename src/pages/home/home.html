@@ -11,28 +11,22 @@
   <ion-grid>
     <ion-row no-padding>
       <ion-col no-padding no-margin>
-        <ion-card no-padding (tap)="tapEvent($event)" style="background-color: #c62828">
-          <ion-card-content>
-            <p style="color: white">Course 1</p>
-          </ion-card-content>
-        </ion-card>
-        <ion-card no-padding style="background-color: #4cb2d4">
-          <ion-card-content>
-            <p style="color: white">Course 1 course 1</p>
-          </ion-card-content>
-        </ion-card>
+        <div *ngFor="let cours of Courses; let i = index; let o=odd;" [hidden]="o">
+          <ion-card  no-padding (tap)="tapEvent($event,cours.id)" [ngStyle]="{'background-color': cours.color}">
+            <ion-card-content>
+              <p text-center style="color: white">{{cours.titre}}</p>
+            </ion-card-content>
+          </ion-card>
+        </div>
       </ion-col>
       <ion-col no-padding no-margin>
-        <ion-card no-padding style="background-color: #844d9e">
-          <ion-card-content>
-            <p style="color: white">Course 1 course 1</p>
-          </ion-card-content>
-        </ion-card>
-        <ion-card no-padding style="background-color: #eb7b2d">
-          <ion-card-content>
-            <p style="color: white">Course 1</p>
-          </ion-card-content>
-        </ion-card>
+        <div *ngFor="let cours of Courses; let i = index; let e=even;" [hidden]="e">
+          <ion-card  no-padding (tap)="tapEvent($event,cours.id)" [ngStyle]="{'background-color': cours.color}">
+            <ion-card-content>
+              <p text-center style="color: white">{{cours.titre}}</p>
+            </ion-card-content>
+          </ion-card>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
