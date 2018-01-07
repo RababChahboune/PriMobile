@@ -23,6 +23,9 @@ export class HttpService {
   getCours(code: string){
     return this.http.get(this.getHost("Cours/"+code));
   }
+  getCards(code: string){
+    return this.http.get(this.getHost("Cours/"+code+"?include=Cartes"));
+  }
 
 
 }
