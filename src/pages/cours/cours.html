@@ -12,20 +12,20 @@
     <ion-title>Cours</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content>
-  <div padding>
-    <h1>Cours Title</h1>
-    <ion-item no-lines>
-      <ion-icon name="ios-clock-outline"></ion-icon> 15min
-    </ion-item>
-    <ion-item no-lines>
-      <ion-icon name="ios-warning-outline"></ion-icon> difficulty
-    </ion-item>
-    <p>
+<ion-content padding style="background-color: #424242">
+    <h1 style="color: white" text-center>{{cours.titre}}</h1>
+    <h6 style="color: white" text-center>{{cours.id}}</h6>
+    <div text-center>
+      <ion-icon name="md-stopwatch" id="clockIcone">{{cours.duree}}min</ion-icon>
+    </div>
+    <div text-center>
+      <ion-icon *ngFor="let d of difficulte" name="egg" id="diffIcone"></ion-icon>
+      <ion-icon *ngFor="let d of fill" name="egg" id="fillIcone"></ion-icon>
+    </div>
+    <p style="color: white">
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante
     </p>
-  </div>
 </ion-content>
 <ion-footer no-shadow no-padding no-margin>
-    <button ion-button full (click)='toCards()' no-padding no-margin>Start!</button>
+    <button ion-button full (click)='toCards()' no-padding no-margin style="background-color: #f44336">Start!</button>
 </ion-footer>

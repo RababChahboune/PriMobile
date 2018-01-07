@@ -10,7 +10,7 @@ import {HttpService} from "../../app/http.service";
 export class HomePage {
 
   Courses = [];
-  public Colors: string[] = ['#c62828','#4cb2d4','#844d9e','#eb7b2d'];
+  public Colors: string[] = ['#f44336','#4cb2d4','#844d9e','#eb7b2d'];
 
   public title:  string = 'Example';
   constructor(public navCtrl: NavController, public httpService: HttpService) {

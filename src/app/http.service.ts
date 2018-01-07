@@ -20,6 +20,9 @@ export class HttpService {
   getCourses(userName: string){
     return this.http.get(this.getHost("Utilisateurs/gulgowski.margarette?include=Disponible"));
   }
+  getCours(code: string){
+    return this.http.get(this.getHost("Cours/"+code));
+  }
 
 
 }
