@@ -12,6 +12,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {CardPage} from "../pages/card/card";
 import {HttpService} from "./http.service";
+import {QuizPage} from "../pages/quiz/quiz";
+import {QuestionPage} from "../pages/question/question";
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import {HttpService} from "./http.service";
     ListPage,
     CoursPage,
     CardPage,
+    QuizPage,
+    QuestionPage,
 
   ],
   imports: [
@@ -34,6 +38,8 @@ import {HttpService} from "./http.service";
     ListPage,
     CoursPage,
     CardPage,
+    QuizPage,
+    QuestionPage,
   ],
   providers: [
     StatusBar,
