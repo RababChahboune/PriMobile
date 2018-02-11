@@ -29,7 +29,17 @@ export class HttpService {
   getQuiz(id : number){
     return this.http.get(this.getHost("Quizzes/"+id+"?include=Questions"));
   }
-  validateAnswers(answers){
-    return this.http.post(this.getHost("Validate"),{"answers":answers});
+  validateAnswers(quiz_id,user_id,answers){
+    return this.http.post(this.getHost("Validate"),{"quiz_id":quiz_id,"utilisateur_id":user_id,"answers":answers});
+  }
+  alreadyPassed(quiz_id,user_id){
+    let body = {
+      utilisateur_id : user_id,
+      quiz_id : quiz_id
+    };
+    return this.http.post(this.getHost("Register"),body);
+  }
+  getRanking(id){
+    return this.http.get(this.getHost("Ranking/"+id));
   }
 }

@@ -15,25 +15,25 @@
 <ion-content padding style="background-color: #424242">
   <ion-slides pager	no-padding no-margin>
     <ion-slide>
-      <h1 style="color: white" text-center>{{cours.titre}}</h1>
-      <h6 style="color: white" text-center>{{cours.id}}</h6>
+      <h1 style="color: white" text-center>{{cours?.titre}}</h1>
+      <h6 style="color: white" text-center>{{cours?.id}}</h6>
       <div text-center>
-        <ion-icon name="md-stopwatch" id="clockIcone">&nbsp;{{cours.duree}}&nbsp;min</ion-icon>
+        <ion-icon name="md-stopwatch" id="clockIcone">&nbsp;{{cours?.duree}}&nbsp;min</ion-icon>
       </div>
       <div text-center>
         <ion-icon *ngFor="let d of difficulte" name="egg" id="diffIcone"></ion-icon>
         <ion-icon *ngFor="let d of fill" name="egg" id="fillIcone"></ion-icon>
       </div>
       <p style="color: white">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante
+        Resume de cours du cloud
       </p>
     </ion-slide>
-    <ion-slide *ngIf="cours.related_quizzes?.length > 0">
+    <ion-slide *ngIf="cours?.related_quizzes?.length > 0">
       <ion-grid>
         <ion-row no-padding>
           <ion-col no-padding no-margin>
-            <div *ngFor="let quiz of cours.related_quizzes; let i = index; let o=odd;" [hidden]="o">
-              <ion-card  no-padding (tap)="toQuiz($event,quiz.id,i)" [ngStyle]="{'background-color': quiz.color}">
+            <div *ngFor="let quiz of cours?.related_quizzes; let i = index; let o=odd;" [hidden]="o">
+              <ion-card  no-padding (tap)="toQuiz($event,quiz.id,i)" [ngStyle]="{'background-color': quiz?.color}">
                 <ion-card-content>
                   <p text-center style="color: white">quiz&nbsp;{{i+1}}</p>
                 </ion-card-content>
@@ -41,7 +41,7 @@
             </div>
           </ion-col>
           <ion-col no-padding no-margin>
-            <div *ngFor="let quiz of cours.related_quizzes ; let i = index; let e=even;" [hidden]="e">
+            <div *ngFor="let quiz of cours?.related_quizzes ; let i = index; let e=even;" [hidden]="e">
               <ion-card  no-padding (tap)="toQuiz($event,quiz.id,i)" [ngStyle]="{'background-color': quiz.color}">
                 <ion-card-content>
                   <p text-center style="color: white">quiz&nbsp;{{i+1}}</p>

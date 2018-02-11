@@ -24,6 +24,7 @@ export class CoursPage {
   public Colors: string[] = ['#f44336','#4cb2d4','#844d9e','#eb7b2d'];
   constructor(public navCtrl: NavController, public navParams: NavParams,public httpService: HttpService) {
     this.code = navParams.get('id');
+    console.log(this.code);
     this.getCours();
   }
 

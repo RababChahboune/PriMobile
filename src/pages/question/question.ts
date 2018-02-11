@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {HttpService} from "../../app/http.service";
 import {FormArray, FormBuilder, FormControl} from "@angular/forms";
+import {QuizPage} from "../quiz/quiz";
 
 /**
  * Generated class for the QuestionPage page.
@@ -78,10 +79,13 @@ export class QuestionPage {
     }
   }
   toResult(){
-    this.httpService.validateAnswers(this.answers).subscribe(
+    this.httpService.validateAnswers(this.quiz['id'],"gulgowski.margarette",this.answers).subscribe(
       data => {
-        console.log(data);
-      },
+        this.navCtrl.setRoot(QuizPage,{
+          "id" : this.id,
+          "index" : this.index,
+          "result" : data
+        });      },
       error => {
         console.log(error.json());
       }

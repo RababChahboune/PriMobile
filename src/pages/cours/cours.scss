@@ -15,5 +15,13 @@ page-cours {
     margin: 10px;
     color: white;
   }
+  .slide-zoom{
+    height:100%;
+    overflow-y: auto;
+  }
+  .swiper-pagination-bullet-active {
+    background: white;
+    opacity: 1;
+  }
 
 }

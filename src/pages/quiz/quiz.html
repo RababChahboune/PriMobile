@@ -4,17 +4,26 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header style="background-color:#424242" text-center>
-  <h4 style="color: white">Quiz {{index+1}}</h4>
+<ion-header style="background-color:#424242">
+  <ion-icon name="arrow-back" position="bottom" class="backIcon" (click)='previous()'></ion-icon>
 </ion-header>
 
 
 <ion-content padding style="background-color: #424242">
+  <h5 style="color: white">Quiz {{index+1}}</h5>
   <h5 style="color: white">Quiz Description</h5>
   <h6 style="color: white" text-center>{{quiz.description}}</h6>
   <h5 style="color: white">Number of Questions&nbsp;:&nbsp;{{quiz.related_question?.length}}</h5>
-  <p style="color: white">add the mark if user already passed this quiz with ranking and say that you can not quit till you finish</p>
+  <h5 *ngIf = "exists==1" style="color: white">Your Score&nbsp;:&nbsp;{{passed.score}}%</h5>
+  <canvas *ngIf = "exists==1" baseChart
+          [data]="doughnutChartData"
+          [labels]="doughnutChartLabels"
+          [chartType]="doughnutChartType"
+          [colors]="doughnutChartColours"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
 </ion-content>
 <ion-footer no-shadow no-padding no-margin>
-  <button ion-button full (click)='toQuestions()' no-padding no-margin style="background-color: #f44336">Start Quiz!</button>
+  <button *ngIf = "exists==0" ion-button full (click)='toQuestions()' no-padding no-margin style="background-color: #f44336">Start Quiz!</button>
+  <button *ngIf = "exists==1" ion-button full (click)='toRanking()' no-padding no-margin style="background-color: #f44336">Go to ranking</button>
 </ion-footer>
